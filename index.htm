@@ -3,18 +3,54 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./js/chessboard-1.0.0.js"></script>
   <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+  <style>
+    /*this is how we center*/
+    .center {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 200px 200px 200px;
+      grid-gap: 20px; 
+    }
+
+    .stuff {
+      /*background-color: cyan;
+      border-radius: 25px;*/
+    }
+  </style>
 </head>
 
 
 <body>
-
-  <img src="./img/us.jpg" alt="Us" width="200px" height="200px" style="margin-left:15px; float: right;">
+  <img src="./img/us.jpg" alt="Us" width="200px" height="200px">
   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 </img>
 
+<div class="center">
+  <div id="board1" style="width: 400px"></div>
+<div/>
 
-<div id="board1" style="width: 400px"></div>
+<br/>
+<br/>
+<br/>
+
+<div class="center">
+<div class="container">
+  <div class="stuff"><div id="board2" style="width: 200px"></div></div>
+  <div class="stuff"><div id="board3" style="width: 200px"></div></div>
+  <div class="stuff"><div id="board4" style="width: 200px"></div></div>
+  <div class="stuff">Hi</div>
+  <div class="stuff">Hello</div>
+  <div class="stuff">Hello</div>
+</div>
 </body>
+</div>
 
 <script src="./script.js"></script>
 <script>
