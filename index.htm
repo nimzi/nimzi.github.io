@@ -2,7 +2,10 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./js/chessboard-1.0.0.js"></script>
-  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
+  <link href="http://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet" type="text/css"/>
+  <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'/>
   <style>
     /*this is how we center*/
     .center {
@@ -20,9 +23,14 @@
     }
 
     .intro {
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-gap: 10px;
+      /*display: grid;
+      grid-template-columns: auto auto  ;
+      grid-gap: 10px;*/
+
+      /*font: 16px 'Dancing Script';*/
+      font: 14px "Arial Black", Gadget, sans-serif;
+      color: brown;
+      /*text-shadow: 2px 2px 0px rgba(0,0,0,0.1), 4px 4px 0px rgba(0,0,0,0.05);*/
     }
 
     .container {
@@ -34,45 +42,89 @@
     .stuff {
       /*background-color: cyan;
       border-radius: 25px;*/
+      font: 20px 'Lobster Two';
+      font-style: bold; 
+      font-variant: normal;
+      text-align: center;
+
+      /*font: 14px "Arial Black", Gadget, sans-serif;*/
+      color: brown;
     }
+
+    #first-heading { 
+      font-family: "Lobster Two"; 
+      font-size: 40px; 
+      font-style: normal; 
+      font-variant: normal; 
+      text-align: center;
+      color: brown;
+    }
+
+    #second-heading { 
+      font-family: "Lobster Two"; 
+      font-size: 32px; 
+      font-style: italic; 
+      font-variant: normal;
+      text-align: center;
+      color: brown;
+    }
+
+    /* SVG background comes from: https://www.svgbackgrounds.com/#abstract-envelope */
+    body {
+      background-color: #77aa77;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%2377aa77'/%3E%3Cstop offset='1' stop-color='%234fd'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
   </style>
 </head>
 
 
 <body>
+  <div id="first-heading">Paul Agron</div>
+  <div id="second-heading">chess coach</div>
+  <br/>
+  <br/>
   <div class="intro">
-    <img src="./img/us.jpg" alt="Us" width="200px" height="200px" align="left">
+    <img src="./img/us.jpg" alt="Us" width="200px" height="200px" align="left" hspace="15" vspace="0">
 
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-    </img>
+
+  </img>
+  <p>
+    I am a National Master with years of coaching experience. I have had tremendous success over the years with  teaching chess to students of different skill levels including ambitious tournament players. I learned the game from my grandfather (a Soviet Master) who was a childhood friend of the fabulous David Bronstein (one of the strongest players in chess history). Throughout my coaching career I’ve had the privilege of teaching children as young as 5 and folks well into their retirement. As a sidenote, I am a father to a 3-year-old daughter, who already knows most of the rules of the game, with an infant daughter hopefully on the same trajectory.
+  </p>
+
+  <p>My resume includes teaching engineering at college level as well decades of work experience at the nations top technology companies. The experience helps me integrate an academic/engineering thought process into chess education. In addition, I bring a good sense of humor to my coaching practice and adhere to the philosophy of having fun at all times while building a skill. My style of play has been described as positionally aggressive and in my coaching I emphasize endgame and middle game technique. I am fluent in Russian and speak poor German and Japanese.</p>
+
+</div>
+
+
+<br/>
+<br/>
+<div class="vbox">
+  <div class="center">
+    <div id="board1" style="width: 400px"></div>
   </div>
 
-
-  <br/>
-  <br/>
-  <div class="vbox">
-    <div class="center">
-      <div id="board1" style="width: 400px"></div>
+  <div class="center">
+    <div class="container">
+      <div class="stuff"><div id="board2" style="width: 200px"></div></div>
+      <div class="stuff"><div id="board3" style="width: 200px"></div></div>
+      <div class="stuff"><div id="board4" style="width: 200px"></div></div>
+      <div class="stuff">Lasker - Marshall</div>
+      <div class="stuff">Capablaca - Alekhine</div>
+      <div class="stuff">Fischer - Spassky </div>
     </div>
-
-    <div class="center">
-      <div class="container">
-        <div class="stuff"><div id="board2" style="width: 200px"></div></div>
-        <div class="stuff"><div id="board3" style="width: 200px"></div></div>
-        <div class="stuff"><div id="board4" style="width: 200px"></div></div>
-        <div class="stuff">Hi</div>
-        <div class="stuff">Hello</div>
-        <div class="stuff">Hello</div>
-      </div>
-    </div>
-  </div>    
+  </div>
+</div>    
 
 
 </body>
 
 
 <script src="./script.js"></script>
-<script>
+<!-- <script>
   document.body.style.background = 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MCIgaGVpZ2h0PSI3MCI+CjxyZWN0IHdpZHRoPSI3MCIgaGVpZ2h0PSI3MCIgZmlsbD0iI2JiZDgxNyI+PC9yZWN0Pgo8ZyB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiPgo8cmVjdCB3aWR0aD0iOTkiIGhlaWdodD0iMjUiIGZpbGw9IiNhOWNlMDAiPjwvcmVjdD4KPHJlY3QgeT0iLTUwIiB3aWR0aD0iOTkiIGhlaWdodD0iMjUiIGZpbGw9IiNhOWNlMDAiPjwvcmVjdD4KPC9nPgo8L3N2Zz4=")'
-</script>
+</script> -->
 </html>
