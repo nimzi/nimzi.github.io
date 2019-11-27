@@ -104,6 +104,9 @@ var pgn = ['1. Nf3 Nf6  2. g3 b6  3. Bg2 Bb7 4. d3 d5  5. O-O e6 6. Nc3 Be7',
 '31. Ng3 Kg8  32. Rc1 Kf8   33. h5 Ke8   34. h6 gxh6  35. Nh5 Kd7 36. Qh4 Ne8',
 '37.Bxh6 Nd8  38.Rxc8 Rxc8  39.g7   1-0'];
 
+var pgn2 = ['1.d4 d5 2.Nc3 Nc6 3.Bg5 Nf6 4.e3 g6 5.Qd2 Bg7 6.O-O-O Bf5 7.h3 Qd6 8.Nf3',
+'O-O-O 9.Bf4 a6 *'];
+
 
 game.load_pgn(pgn.join('\n'));
 var h = game.history({ verbose: true });
@@ -124,6 +127,20 @@ function cycle(count) {
 			var m = h[count];
 			var mm = m.from + "-" + m.to;
 			board.move(mm);
+
+			// castling
+			if (m.piece == "k") {
+				if (m.from == "e1" &&  m.to == "g1") {
+					board.move("h1-f1");	
+				} else if (m.from == "e8" && m.to == "g8") {
+					board.move("h8-f8");	
+				} else if (m.from == "e1" && m.to == "c1") {
+					board.move("a1-d1");
+				} else if (m.from == "e8" && m.to == "c8") {
+					board.move("a8-d8");
+				}
+			}
+			
 			cycle(count+1);
 		} else {
 			game.reset();
