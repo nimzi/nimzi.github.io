@@ -2,6 +2,7 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./js/chessboard-1.0.0.js"></script>
+  <script src="./js/chess.js"></script>
   <link rel="stylesheet" href="css/chessboard-1.0.0.min.css"/>
   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
   <link href="http://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet" type="text/css"/>
@@ -20,6 +21,12 @@
       display: grid;
       grid-template-columns: auto;
       grid-gap: 30px;
+    }
+
+    .vbox2 {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 5px;
     }
 
     .intro {
@@ -51,13 +58,28 @@
       color: brown;
     }
 
+    .section {
+      /*background-color: cyan;
+      border-radius: 25px;*/
+      font: 26px 'Lobster Two';
+      font-style: bold; 
+      font-variant: normal;
+      text-align: center;
+      /*font: 14px "Arial Black", Gadget, sans-serif;*/
+      color: #dd2b2b;  /* reddish brown */
+
+    }
+
+
+
     #first-heading { 
       font-family: "Lobster Two"; 
       font-size: 40px; 
       font-style: normal; 
       font-variant: normal; 
       text-align: center;
-      color: brown;
+      /*color: brown;*/
+      color: #dd2b2b;
     }
 
     #second-heading { 
@@ -66,11 +88,14 @@
       font-style: italic; 
       font-variant: normal;
       text-align: center;
-      color: brown;
+      /*color: brown;*/
+      color: #dd2b2b;
     }
 
     /* SVG background comes from: https://www.svgbackgrounds.com/#abstract-envelope */
     body {
+      font: 14px "Arial Black", Gadget, sans-serif;
+      color: brown;
       background-color: #77aa77;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%2377aa77'/%3E%3Cstop offset='1' stop-color='%234fd'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
       background-attachment: fixed;
@@ -89,7 +114,6 @@
   <div class="intro">
     <img src="./img/us.jpg" alt="Us" width="200px" height="200px" align="left" hspace="15" vspace="0">
 
-
   </img>
   <p>
     I am a National Master with years of coaching experience. I have had tremendous success over the years with  teaching chess to students of different skill levels including ambitious tournament players. I learned the game from my grandfather (a Soviet Master) who was a childhood friend of the fabulous David Bronstein (one of the strongest players in chess history). Throughout my coaching career I’ve had the privilege of teaching children as young as 5 and folks well into their retirement. As a sidenote, I am a father to a 3-year-old daughter, who already knows most of the rules of the game, with an infant daughter hopefully on the same trajectory.
@@ -103,10 +127,31 @@
 <br/>
 <br/>
 <div class="vbox">
+  <div class="center section"> 
+    Agron (2200) vs. Humphrey (2100)
+  </div>
+  
   <div class="center">
     <div id="board1" style="width: 400px"></div>
-  </div>
 
+    <!-- <div class="vbox2">
+      
+      <label>Status:</label>
+      <div id="status"></div>
+      <label>FEN:</label>
+      <div id="fen"></div>
+      <label>PGN:</label>
+      <div id="pgn"></div>
+      <button>Next</button>
+      <button>Back</button>
+      <button>Start</button>
+    </div> -->
+  </div>
+  <br/>
+
+  <div class="center section"> 
+    Favorite Games
+  </div>
   <div class="center">
     <div class="container">
       <div class="stuff"><div id="board2" style="width: 200px"></div></div>
