@@ -83,7 +83,6 @@ $pgn.html(game.pgn())
 
 var config2 = {
 	showNotation: false,
-	// draggable: true,
 	draggable: false,
 	position: 'start',
 	// onDragStart: onDragStart,
@@ -125,12 +124,10 @@ function cycle(count) {
 			var m = h[count];
 			var mm = m.from + "-" + m.to;
 			board.move(mm);
-			updateStatus();
 			cycle(count+1);
 		} else {
 			game.reset();
 			board.start();
-			updateStatus();
 			cycle(0);
 		}
 	});
