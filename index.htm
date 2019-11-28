@@ -26,7 +26,7 @@
     .vbox2 {
       display: grid;
       grid-template-columns: auto auto;
-      grid-gap: 5px;
+      grid-gap: 3px;
     }
 
     .intro {
@@ -42,7 +42,7 @@
 
     .container {
       display: grid;
-      grid-template-columns: 200px 200px 200px;
+      grid-template-columns: 250px 250px 250px;
       grid-gap: 20px; 
     }
 
@@ -93,16 +93,57 @@
     }
 
     /* SVG background comes from: https://www.svgbackgrounds.com/#abstract-envelope */
-    body {
+    /*body {
       font: 14px "Arial Black", Gadget, sans-serif;
       color: brown;
       background-color: #77aa77;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%2377aa77'/%3E%3Cstop offset='1' stop-color='%234fd'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
       background-attachment: fixed;
       background-size: cover;
+      }*/
+
+      body {
+       font: 14px "Arial Black", Gadget, sans-serif;
+       color: brown;
+       background-color: #c5e0af;
+       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23c5e0af'/%3E%3Cstop offset='1' stop-color='%234fd'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.41'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+       background-attachment: fixed;
+       background-size: cover;
+     }
+
+     button {
+      font-size: 12px;
+      background-color: #2299FF;
+      border: none;
+      color: yellow;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      
+      /*margin: 4px 2px;*/
+      cursor: pointer;
+      border-radius: 8px;
+      outline: none;
     }
 
-  </style>
+    button {
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+    }
+
+    button:hover {
+      background-color: #4CAF99; /* Green */
+      color: white;
+    }
+
+    button:active {
+     /*background-color: #3e8e41;*/
+     /*box-shadow: 0 5px #666;*/
+     transform: translateY(4px);
+   }
+
+ </style>
 </head>
 
 
@@ -130,9 +171,10 @@
   <div class="center section"> 
     Agron (2200) vs. Humphrey (2100)
   </div>
+
   
   <div class="center">
-    <div id="board1" style="width: 400px"></div>
+    <div id="board1" style="width: 350px"></div>
 
     <!-- <div class="vbox2">
       
@@ -147,19 +189,57 @@
       <button>Start</button>
     </div> -->
   </div>
-  <br/>
+  <!-- <br/> -->
+  <div>
+    <p>
+      My instructional approach is guided by a variety of factors including a student's age and skill level. With the younger students I try to team up with a parent to accelerate skill building. A big component of the process is parent education. 
+    </p>
+    <p> 
+      With the teens and young adults the focus is on the development of learning skills and the aptitude for chess analisys. An in-depth study of the opening, the development of a style and an approach to the game are the integral ingredients of the process.
+    </p>
+    <p>
+      In all cases gameplay is structured on a strong foundation of positional understaning and the study of technique. Finally, the plan of development is customized for each student based her individual strengths and weaknesses. For instance, my tacticians are steered toward complicated positions full of attacking oportunities while those who exell in technical positions are encouraged accordingly.
+    </p>
+
+  </div>
 
   <div class="center section"> 
     Favorite Games
   </div>
   <div class="center">
     <div class="container">
-      <div class="stuff"><div id="board2" style="width: 200px"></div></div>
-      <div class="stuff"><div id="board3" style="width: 200px"></div></div>
-      <div class="stuff"><div id="board4" style="width: 200px"></div></div>
+      <div class="stuff"><div id="board2" ></div></div>
+      <div class="stuff"><div id="board3" ></div></div>
+      <div class="stuff"><div id="board4" ></div></div>
       <div class="stuff">Lasker - Marshall</div>
       <div class="stuff">Capablaca - Alekhine</div>
       <div class="stuff">Fischer - Spassky </div>
+
+      <div class="stuff">
+        <div class="vbox2">
+          <button onclick="prev(2)"><b>&lt;</b></button>
+          <button onclick="next(2)"><b>&gt;</b></button>
+          <button onclick="start(2)"><b>&lt;&lt;</b></button>
+          <button onclick="end(2)"><b>&gt;&gt;</b></button>
+        </div>
+      </div>
+
+      <div class="stuff">
+        <div class="vbox2">
+          <button onclick="prev(3)"><b>&lt;</b></button>
+          <button onclick="next(3)"><b>&gt;</b></button>
+          <button onclick="start(3)"><b>&lt;&lt;</b></button>
+          <button onclick="end(3)"><b>&gt;&gt;</b></button>
+        </div>
+      </div>
+      <div class="stuff">
+        <div class="vbox2">
+          <button onclick="prev(4)"><b>&lt;</b></button>
+          <button onclick="next(4)"><b>&gt;</b></button>
+          <button onclick="start(4)"><b>&lt;&lt;</b></button>
+          <button onclick="end(4)"><b>&gt;&gt;</b></button>
+        </div>
+      </div>
     </div>
   </div>
 </div>    

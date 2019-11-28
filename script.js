@@ -151,4 +151,30 @@ function cycle(count) {
 
 }
 
+//start cycling through moves on the main board
 cycle(0);
+
+
+// controlling the little boards
+function start(idx) {
+	switch (idx) {
+		case 2: board2.start(); break;
+		case 3: board3.start(); break;
+		case 4: board4.start(); break;
+	}
+	
+}
+
+function prev(idx) {
+	console.log("prev" + idx);
+}
+
+function next(idx) {
+	console.log("next" + idx);
+}
+
+function end(idx) {
+	console.log("end" + idx);
+}
+
+
