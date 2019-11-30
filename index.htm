@@ -92,6 +92,34 @@
       color: #dd2b2b;
     }
 
+    div.right {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      z-index: -1;
+      user-drag: none; 
+      user-select: none;
+      /*-moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;*/
+      transform: scale(-1,1 );
+    }
+
+    div.left {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: -1;
+      user-drag: none; 
+      user-select: none;
+      /*-moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;*/
+      transform: scale(1,1 );
+    }
+
     /* SVG background comes from: https://www.svgbackgrounds.com/#abstract-envelope */
     /*body {
       font: 14px "Arial Black", Gadget, sans-serif;
@@ -153,6 +181,12 @@
   <br/>
   <div class="center">
     <img src="./img/contact.png"/>
+  </div>
+  <div class="right">
+    <img src="./img/horse.png" width="200px" />
+  </div>
+  <div class="left">
+    <img src="./img/horse.png" width="200px" />
   </div>
   <br/>
   <br/>
@@ -220,33 +254,33 @@
       <div class="stuff"><div id="board2" ></div></div>
       <div class="stuff"><div id="board3" ></div></div>
       <div class="stuff"><div id="board4" ></div></div>
-      <div class="stuff">Lasker - Marshall</div>
-      <div class="stuff">Capablaca - Alekhine</div>
+      <div class="stuff">Morphy - Count Isouard </div>
+      <div class="stuff">Lasker - Bauer</div>
       <div class="stuff">Fischer - Spassky </div>
 
+      <div class="stuff">
+        <div class="vbox2">
+          <button onclick="prev(0)"><b>&lt;</b></button>
+          <button onclick="next(0)"><b>&gt;</b></button>
+          <button onclick="start(0)"><b>&lt;&lt;</b></button>
+          <button onclick="end(0)"><b>&gt;&gt;</b></button>
+        </div>
+      </div>
+
+      <div class="stuff">
+        <div class="vbox2">
+          <button onclick="prev(1)"><b>&lt;</b></button>
+          <button onclick="next(1)"><b>&gt;</b></button>
+          <button onclick="start(1)"><b>&lt;&lt;</b></button>
+          <button onclick="end(1)"><b>&gt;&gt;</b></button>
+        </div>
+      </div>
       <div class="stuff">
         <div class="vbox2">
           <button onclick="prev(2)"><b>&lt;</b></button>
           <button onclick="next(2)"><b>&gt;</b></button>
           <button onclick="start(2)"><b>&lt;&lt;</b></button>
           <button onclick="end(2)"><b>&gt;&gt;</b></button>
-        </div>
-      </div>
-
-      <div class="stuff">
-        <div class="vbox2">
-          <button onclick="prev(3)"><b>&lt;</b></button>
-          <button onclick="next(3)"><b>&gt;</b></button>
-          <button onclick="start(3)"><b>&lt;&lt;</b></button>
-          <button onclick="end(3)"><b>&gt;&gt;</b></button>
-        </div>
-      </div>
-      <div class="stuff">
-        <div class="vbox2">
-          <button onclick="prev(4)"><b>&lt;</b></button>
-          <button onclick="next(4)"><b>&gt;</b></button>
-          <button onclick="start(4)"><b>&lt;&lt;</b></button>
-          <button onclick="end(4)"><b>&gt;&gt;</b></button>
         </div>
       </div>
     </div>
