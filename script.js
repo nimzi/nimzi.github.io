@@ -2,6 +2,51 @@ var config = {
 	position: 'start',
 	draggable: true,
 	showNotation: false
+}
+
+
+class PGNViewer {
+	constructor(pgnText,board) {
+		this.pgn = pgnText;
+		this.board = board;
+		this.chess = new Chess();
+		this.chess.load_pgn(pgnText);
+		this.history = this.chess.history();
+		this.index = -1;
+	}
+
+	showAtIndex() {
+		this.chess.reset();
+			
+        for (var i = 0;i<=this.index;i++) {
+        	this.chess.move(this.history[i]);
+        }
+
+        var fen = this.chess.fen();
+        this.board.position(fen);
+	}
+
+	next() {
+		if (this.index < this.history.length - 1) {
+            this.index = this.index + 1;
+			this.showAtIndex();
+            
+			
+		}
+
+	}
+
+	prev() {
+		if (this.index >= 0) {
+            this.index = this.index - 1;
+            this.showAtIndex();
+		} 
+	}
+
+	start() {
+		this.index = -1;
+		this.board.start();
+	}
 
 }
 
@@ -155,22 +200,36 @@ function cycle(count) {
 cycle(0);
 
 
+var text = pgn2.join('\n');
+var controllers = [
+	new PGNViewer(text,board2), 
+	new PGNViewer(text,board3),
+	new PGNViewer(text,board4)];
+
 // controlling the little boards
 function start(idx) {
 	switch (idx) {
-		case 2: board2.start(); break;
-		case 3: board3.start(); break;
-		case 4: board4.start(); break;
+		case 2: controllers[0].start(); break;
+		case 3: controllers[1].start(); break;
+		case 4: controllers[2].start(); break;
 	}
 	
 }
 
 function prev(idx) {
-	console.log("prev" + idx);
+    switch (idx) {
+        case 2: controllers[0].prev(); break;
+        case 3: controllers[1].prev(); break;
+        case 4: controllers[2].prev(); break;
+    }
 }
 
 function next(idx) {
-	console.log("next" + idx);
+	switch (idx) {
+		case 2: controllers[0].next(); break;
+		case 3: controllers[1].next(); break;
+		case 4: controllers[2].next(); break;
+	}
 }
 
 function end(idx) {
