@@ -1,186 +1,26 @@
 <html>
+
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./js/chessboard-1.0.0.js"></script>
   <script src="./js/chess.js"></script>
-  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css"/>
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
-  <link href="http://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet" type="text/css"/>
-  <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'/>
+  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+  <link rel="stylesheet" href="css/mystyle.css" />
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
+  <link href="http://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet" type="text/css">
   <style>
-    /*this is how we center*/
-    .center {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .vbox {
-      display: grid;
-      grid-template-columns: auto;
-      grid-gap: 30px;
-    }
-
-    .vbox2 {
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-gap: 3px;
-    }
-
-    .intro {
-      /*display: grid;
-      grid-template-columns: auto auto  ;
-      grid-gap: 10px;*/
-
-      /*font: 16px 'Dancing Script';*/
-      font: 14px "Arial Black", Gadget, sans-serif;
-      color: brown;
-      /*text-shadow: 2px 2px 0px rgba(0,0,0,0.1), 4px 4px 0px rgba(0,0,0,0.05);*/
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: 250px 250px 250px;
-      grid-gap: 20px; 
-    }
-
-    .stuff {
-      /*background-color: cyan;
-      border-radius: 25px;*/
-      font: 20px 'Lobster Two';
-      font-style: bold; 
-      font-variant: normal;
-      text-align: center;
-
-      /*font: 14px "Arial Black", Gadget, sans-serif;*/
-      color: brown;
-    }
-
-    .section {
-      /*background-color: cyan;
-      border-radius: 25px;*/
-      font: 26px 'Lobster Two';
-      font-style: bold; 
-      font-variant: normal;
-      text-align: center;
-      /*font: 14px "Arial Black", Gadget, sans-serif;*/
-      color: #dd2b2b;  /* reddish brown */
-
-    }
-
-
-
-    #first-heading { 
-      font-family: "Lobster Two"; 
-      font-size: 40px; 
-      font-style: normal; 
-      font-variant: normal; 
-      text-align: center;
-      /*color: brown;*/
-      color: #dd2b2b;
-    }
-
-    #second-heading { 
-      font-family: "Lobster Two"; 
-      font-size: 32px; 
-      font-style: italic; 
-      font-variant: normal;
-      text-align: center;
-      /*color: brown;*/
-      color: #dd2b2b;
-    }
-
-    div.right {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      z-index: -1;
-      user-drag: none; 
-      user-select: none;
-      /*-moz-user-select: none;
-      -webkit-user-drag: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;*/
-      transform: scale(-1,1 );
-    }
-
-    div.left {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      z-index: -1;
-      user-drag: none; 
-      user-select: none;
-      /*-moz-user-select: none;
-      -webkit-user-drag: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;*/
-      transform: scale(1,1 );
-    }
-
-    /* SVG background comes from: https://www.svgbackgrounds.com/#abstract-envelope */
-    /*body {
-      font: 14px "Arial Black", Gadget, sans-serif;
-      color: brown;
-      background-color: #77aa77;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%2377aa77'/%3E%3Cstop offset='1' stop-color='%234fd'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
-      background-attachment: fixed;
-      background-size: cover;
-      }*/
-
-      body {
-       font: 14px "Arial Black", Gadget, sans-serif;
-       color: brown;
-       background-color: #c5e0af;
-       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23c5e0af'/%3E%3Cstop offset='1' stop-color='%234fd'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.41'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
-       background-attachment: fixed;
-       background-size: cover;
-     }
-
-     button {
-      font-size: 12px;
-      background-color: #2299FF;
-      border: none;
-      color: yellow;
-      padding: 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      
-      /*margin: 4px 2px;*/
-      cursor: pointer;
-      border-radius: 8px;
-      outline: none;
-    }
-
-    button {
-      -webkit-transition-duration: 0.4s; /* Safari */
-      transition-duration: 0.4s;
-    }
-
-    button:hover {
-      background-color: #4CAF99; /* Green */
-      color: white;
-    }
-
-    button:active {
-     /*background-color: #3e8e41;*/
-     /*box-shadow: 0 5px #666;*/
-     transform: translateY(4px);
-   }
-
- </style>
+    /* nothing here yet*/
+  </style>
 </head>
 
 
 <body>
   <div id="first-heading">Paul Agron</div>
   <div id="second-heading">chess coach</div>
-  <br/>
+  <br />
   <div class="center">
-    <img src="./img/contact.png"/>
+    <img src="./img/contact.png" />
   </div>
   <div class="right">
     <img src="./img/horse.png" width="200px" />
@@ -188,104 +28,125 @@
   <div class="left">
     <img src="./img/horse.png" width="200px" />
   </div>
-  <br/>
-  <br/>
+  <br />
+  <br />
   <div class="intro">
     <img src="./img/us.jpg" alt="Us" width="200px" height="200px" align="left" hspace="15" vspace="0">
 
-  </img>
-  <p>
-    I am a <a href="http://www.uschess.org/datapage/player-search.php?name=14016682&state=ANY&ratingmin=&ratingmax=&order=N&rating=R&mode=Find">National Master</a> with years of coaching experience. I have had tremendous success over the years with  teaching chess to students of different skill levels including ambitious tournament players. I learned the game from my grandfather (a Soviet Master) who was a childhood friend of the fabulous <a href="https://en.wikipedia.org/wiki/David_Bronstein">David Bronstein</a> (one of the strongest players in chess history). Throughout my coaching career I’ve had the privilege of teaching children as young as 5 and folks well into their retirement. As a sidenote, I am a father to a 3-year-old daughter, who already knows most of the rules of the game, with an infant daughter hopefully on the same trajectory.
-  </p>
-
-  <p>My resume includes teaching engineering at college level as well as decades of work experience at the nations top technology companies. The experience helps me integrate an academic/engineering thought process into chess education. In addition, I bring a good sense of humor to my coaching practice and adhere to the philosophy of having fun at all times while building a skill. My style of play has been described as positionally aggressive and in my coaching I emphasize endgame and middle game technique. I am fluent in Russian and speak poor German and Japanese.</p>
-
-</div>
-
-
-<br/>
-<br/>
-<div class="vbox">
-  <div class="center section"> 
-    Agron (2200) vs. Humphrey (2100)
-  </div>
-
-  
-  <div class="center">
-    <div id="board1" style="width: 350px"></div>
-
-    <!-- <div class="vbox2">
-      
-      <label>Status:</label>
-      <div id="status"></div>
-      <label>FEN:</label>
-      <div id="fen"></div>
-      <label>PGN:</label>
-      <div id="pgn"></div>
-      <button>Next</button>
-      <button>Back</button>
-      <button>Start</button>
-    </div> -->
-  </div>
-  <!-- <br/> -->
-  <div>
+    </img>
     <p>
-      My instructional approach is guided by a variety of factors including a student's age and skill level. With the younger students I try to team up with a parent and accelerate skill building. A big component of the process is parent education. Another area of focus is exposure of a student to a multitude of common patterns such as checkmating patterns, attacking patterns, and the recognition of out-of-play pieces.
+      I am a <a
+        href="http://www.uschess.org/datapage/player-search.php?name=14016682&state=ANY&ratingmin=&ratingmax=&order=N&rating=R&mode=Find">National
+        Master</a> with years of coaching experience. I have had tremendous success over the years with teaching chess
+      to students of different skill levels including ambitious tournament players. I learned the game from my
+      grandfather (a Soviet Master) who was a childhood friend of the fabulous <a
+        href="https://en.wikipedia.org/wiki/David_Bronstein">David Bronstein</a> (one of the strongest players in chess
+      history). Throughout my coaching career I’ve had the privilege of teaching children as young as 5 and folks well
+      into their retirement.
     </p>
-    <p> 
-      With the teens and young adults the focus is on the development of learning skills and the aptitude for chess analysis. An in-depth study of the opening, the development of a style and an approach to the game are the integral ingredients of the process.
-    </p>
-    <p>
-      With my adult students I typically try a more structured approach where a great emphasis is placed on the opening and technique and the development of chess skills by analogy through the skills they have built in other areas.
-    </p>
-    <p>
-      In all cases game-play is structured on a strong foundation of positional understanding and the study of technique. Finally, the plan of development is customized for each student based on her individual strengths and weaknesses. For instance, my tacticians are steered toward complicated positions full of attacking opportunities while those who excel in technical positions are encouraged accordingly. All students are exposed to important historical games which are categorized by strategic or tactical motifs.
+    <p>As a sidenote, I am a father to two daughters: a 4-year-old daughter, who already knows
+      most of the rules
+      of the game, with a one-year-old hopefully on the same trajectory. I wrote a not-so-short article dedicaged to <a
+        href="article.htm">Bay Area chess parents</a> that might prove to be informative.
     </p>
 
-
+    <p>My resume includes teaching engineering at college level as well as decades of work experience at the nations top
+      technology companies. The experience helps me integrate an academic/engineering thought process into chess
+      education. In addition, I bring a good sense of humor to my coaching practice and adhere to the philosophy of
+      having fun at all times while building a skill. My style of play has been described as positionally aggressive and
+      in my coaching I emphasize endgame and middle game technique. I am fluent in Russian and speak poor German and
+      Japanese.</p>
 
   </div>
 
-  <div class="center section"> 
-    Instructive Games
-  </div>
-  <div class="center">
-    <div class="container">
-      <div class="stuff"><div id="board2" ></div></div>
-      <div class="stuff"><div id="board3" ></div></div>
-      <div class="stuff"><div id="board4" ></div></div>
-      <div class="stuff">Morphy - Count Isouard </div>
-      <div class="stuff">Lasker - Bauer</div>
-      <div class="stuff">Spassky - Fischer</div>
 
-      <div class="stuff">
-        <div class="vbox2">
-          <button onclick="prev(0)"><b>&lt;</b></button>
-          <button onclick="next(0)"><b>&gt;</b></button>
-          <button onclick="start(0)"><b>&lt;&lt;</b></button>
-          <button onclick="end(0)"><b>&gt;&gt;</b></button>
+  <br />
+  <br />
+  <div class="vbox">
+    <div class="center section">
+      Agron (2200) vs. Humphrey (2100)
+    </div>
+
+
+    <div class="center">
+      <div id="board1" style="width: 350px"></div>
+    </div>
+
+    <div>
+      <p>
+        My instructional approach is guided by a variety of factors including a student's age and skill level. With the
+        younger students I try to team up with a parent and accelerate skill building. A big component of the process is
+        parent education. Another area of focus is exposure of a student to a multitude of common patterns such as
+        checkmating patterns, attacking patterns, and the recognition of out-of-play pieces.
+      </p>
+      <p>
+        With the teens and young adults the focus is on the development of learning skills and the aptitude for chess
+        analysis. An in-depth study of the opening, the development of a style and an approach to the game are the
+        integral ingredients of the process.
+      </p>
+      <p>
+        With my adult students I typically try a more structured approach where a great emphasis is placed on the
+        opening and technique and the development of chess skills by analogy through the skills they have built in other
+        areas.
+      </p>
+      <p>
+        In all cases game-play is structured on a strong foundation of positional understanding and the study of
+        technique. Finally, the plan of development is customized for each student based on her individual strengths and
+        weaknesses. For instance, my tacticians are steered toward complicated positions full of attacking opportunities
+        while those who excel in technical positions are encouraged accordingly. All students are exposed to important
+        historical games which are categorized by strategic or tactical motifs.
+      </p>
+
+
+
+    </div>
+
+    <div class="center section">
+      Instructive Games
+    </div>
+    <div class="center">
+      <div class="container">
+        <div class="stuff">
+          <div id="board2"></div>
         </div>
-      </div>
-
-      <div class="stuff">
-        <div class="vbox2">
-          <button onclick="prev(1)"><b>&lt;</b></button>
-          <button onclick="next(1)"><b>&gt;</b></button>
-          <button onclick="start(1)"><b>&lt;&lt;</b></button>
-          <button onclick="end(1)"><b>&gt;&gt;</b></button>
+        <div class="stuff">
+          <div id="board3"></div>
         </div>
-      </div>
-      <div class="stuff">
-        <div class="vbox2">
-          <button onclick="prev(2)"><b>&lt;</b></button>
-          <button onclick="next(2)"><b>&gt;</b></button>
-          <button onclick="start(2)"><b>&lt;&lt;</b></button>
-          <button onclick="end(2)"><b>&gt;&gt;</b></button>
+        <div class="stuff">
+          <div id="board4"></div>
+        </div>
+        <div class="stuff">Morphy - Count Isouard </div>
+        <div class="stuff">Lasker - Bauer</div>
+        <div class="stuff">Spassky - Fischer</div>
+
+        <div class="stuff">
+          <div class="vbox2">
+            <button onclick="prev(0)"><b>&lt;</b></button>
+            <button onclick="next(0)"><b>&gt;</b></button>
+            <button onclick="start(0)"><b>&lt;&lt;</b></button>
+            <button onclick="end(0)"><b>&gt;&gt;</b></button>
+          </div>
+        </div>
+
+        <div class="stuff">
+          <div class="vbox2">
+            <button onclick="prev(1)"><b>&lt;</b></button>
+            <button onclick="next(1)"><b>&gt;</b></button>
+            <button onclick="start(1)"><b>&lt;&lt;</b></button>
+            <button onclick="end(1)"><b>&gt;&gt;</b></button>
+          </div>
+        </div>
+        <div class="stuff">
+          <div class="vbox2">
+            <button onclick="prev(2)"><b>&lt;</b></button>
+            <button onclick="next(2)"><b>&gt;</b></button>
+            <button onclick="start(2)"><b>&lt;&lt;</b></button>
+            <button onclick="end(2)"><b>&gt;&gt;</b></button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>    
 
 
 </body>
@@ -295,4 +156,5 @@
 <!-- <script>
   document.body.style.background = 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MCIgaGVpZ2h0PSI3MCI+CjxyZWN0IHdpZHRoPSI3MCIgaGVpZ2h0PSI3MCIgZmlsbD0iI2JiZDgxNyI+PC9yZWN0Pgo8ZyB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiPgo8cmVjdCB3aWR0aD0iOTkiIGhlaWdodD0iMjUiIGZpbGw9IiNhOWNlMDAiPjwvcmVjdD4KPHJlY3QgeT0iLTUwIiB3aWR0aD0iOTkiIGhlaWdodD0iMjUiIGZpbGw9IiNhOWNlMDAiPjwvcmVjdD4KPC9nPgo8L3N2Zz4=")'
 </script> -->
+
 </html>
