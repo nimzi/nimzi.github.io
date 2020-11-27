@@ -86,7 +86,6 @@ div.right {
   top: 0px;
   right: 0px;
   z-index: -1;
-  user-drag: none;
   user-select: none;
   /*-moz-user-select: none;
     -webkit-user-drag: none;
@@ -100,7 +99,6 @@ div.left {
   top: 0px;
   left: 0px;
   z-index: -1;
-  user-drag: none;
   user-select: none;
   /*-moz-user-select: none;
     -webkit-user-drag: none;
@@ -130,9 +128,14 @@ body {
   background-size: cover;
 }
 
+img {
+  border-radius: 5%;
+}
+
 button {
   font-size: 12px;
-  background-color: #2299ff;
+  /* background-color: #2299ff; */
+  background-color: #4caf99; 
   border: none;
   color: yellow;
   padding: 10px;
@@ -142,8 +145,28 @@ button {
 
   /*margin: 4px 2px;*/
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 20px;
   outline: none;
+}
+
+.center-button {
+  font-size: 18px;
+  background-color: #4caf99; 
+  border: none;
+  color: yellow;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+  /*margin: 4px 2px;*/
+  cursor: pointer;
+  border-radius: 30px;
+  outline: none;
+}
+
+.center-button:hover {
+  background-color: #2299ff;
 }
 
 button {
@@ -152,7 +175,8 @@ button {
 }
 
 button:hover {
-  background-color: #4caf99; /* Green */
+  /* background-color: #4caf99;  */
+  background-color: #2299ff;
   color: white;
 }
 
@@ -160,4 +184,11 @@ button:active {
   /*background-color: #3e8e41;*/
   /*box-shadow: 0 5px #666;*/
   transform: translateY(4px);
+}
+
+.limited {
+  max-width: 700px;
+  margin: auto;
+  /* background-color: lightblue; */
+
 }

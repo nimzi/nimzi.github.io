@@ -9,6 +9,8 @@
   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
   <link href="http://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet" type="text/css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
   <style>
     /* nothing here yet*/
   </style>
@@ -16,23 +18,37 @@
 
 
 <body>
-  <div id="first-heading">Paul Agron</div>
-  <div id="second-heading">chess coach</div>
-  <br />
-  <div class="center">
-    <img src="./img/contact.png" />
-  </div>
-  <div class="right">
-    <img src="./img/horse.png" width="200px" />
-  </div>
-  <div class="left">
-    <img src="./img/horse.png" width="200px" />
-  </div>
-  <br />
-  <br />
-  <div class="intro">
-    <img src="./img/us.jpg" alt="Us" width="200px" height="200px" align="left" hspace="15" vspace="0">
+  <div class="limited">
+    <div style="position:relative">
+      <div id="first-heading">Paul Agron</div>
+      <div id="second-heading">chess coach</div>
+      <br />
+      <div class="center">
+        <img src="./img/contact.png" />
+      </div>
+      <div class="center">
+        <button onclick="" class="center-button">Book a free lesson</button>
+      </div>
 
+
+      <div class="right">
+        <img src="./img/horse.png" width="200px" />
+      </div>
+      <div class="left">
+        <img src="./img/horse.png" width="200px" />
+      </div>
+      <div style="position:absolute;left:20;top:140">
+        <i class="fa fa-chess" style="font-size:38px;"></i>
+        <i class="fa fa-chess-queen" style="font-size:48px;"></i>
+        <i class="fa fa-chess-knight" style="font-size:60px;color:red;"></i>
+      </div>
+    </div>
+  </div>
+  <!-- <br />
+  <br /> -->
+  <br />
+  <div class="limited">
+    <img src="./img/us.jpg" alt="Us" width="200px" height="200px" align="left" hspace="15" vspace="0">
     </img>
     <p>
       I am a <a
@@ -72,7 +88,7 @@
       <div id="board1" style="width: 350px"></div>
     </div>
 
-    <div>
+    <div class="limited">
       <p>
         My instructional approach is guided by a variety of factors including a student's age and skill level. With the
         younger students I try to team up with a parent and accelerate skill building. A big component of the process is
@@ -121,27 +137,27 @@
 
         <div class="stuff">
           <div class="vbox2">
-            <button onclick="prev(0)"><b>&lt;</b></button>
-            <button onclick="next(0)"><b>&gt;</b></button>
-            <button onclick="start(0)"><b>&lt;&lt;</b></button>
-            <button onclick="end(0)"><b>&gt;&gt;</b></button>
+            <button onclick="prev(0)"><i class="fa fa-angle-left"></i></button>
+            <button onclick="next(0)"><i class="fa fa-angle-right"></i></button>
+            <button onclick="start(0)"><i class="fa fa-angle-double-left"></i></button>
+            <button onclick="end(0)"><i class="fa fa-angle-double-right"></i></button>
           </div>
         </div>
 
         <div class="stuff">
           <div class="vbox2">
-            <button onclick="prev(1)"><b>&lt;</b></button>
-            <button onclick="next(1)"><b>&gt;</b></button>
-            <button onclick="start(1)"><b>&lt;&lt;</b></button>
-            <button onclick="end(1)"><b>&gt;&gt;</b></button>
+            <button onclick="prev(1)"><i class="fa fa-angle-left"></i></button>
+            <button onclick="next(1)"><i class="fa fa-angle-right"></i></button>
+            <button onclick="start(1)"><i class="fa fa-angle-double-left"></i></button>
+            <button onclick="end(1)"><i class="fa fa-angle-double-right"></i></button>
           </div>
         </div>
         <div class="stuff">
           <div class="vbox2">
-            <button onclick="prev(2)"><b>&lt;</b></button>
-            <button onclick="next(2)"><b>&gt;</b></button>
-            <button onclick="start(2)"><b>&lt;&lt;</b></button>
-            <button onclick="end(2)"><b>&gt;&gt;</b></button>
+            <button onclick="prev(2)"><i class="fa fa-angle-left"></i></button>
+            <button onclick="next(2)"><i class="fa fa-angle-right"></i></button>
+            <button onclick="start(2)"><i class="fa fa-angle-double-left"></i></button>
+            <button onclick="end(2)"><i class="fa fa-angle-double-right"></i></button>
           </div>
         </div>
       </div>
